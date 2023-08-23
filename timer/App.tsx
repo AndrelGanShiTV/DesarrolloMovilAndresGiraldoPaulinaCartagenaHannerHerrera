@@ -1,11 +1,22 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, Button} from 'react-native';
+import {
+  SafeAreaView,
+  SafeAreaViewBase,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+  Button,
+} from 'react-native';
 
 const App = () => {
   return (
     <SafeAreaView style={style.contains}>
-      <Text style={style.title}>Gestion de Horas{''}</Text>
-      <Button title="Esto es un boton"></Button>
+      <Text style={style.title}>Gestion de {''}</Text>
+      <Text>Horas</Text>
+      <Button title="Iniciar Horas"></Button>
     </SafeAreaView>
   );
 };
@@ -16,8 +27,9 @@ const style = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontFamily: 'Arial',
-    fontSize: 2,
+    fontFamily: 'caption',
+    fontSize: 25,
+    color: '#5195FF',
   },
 });
 export default App;
