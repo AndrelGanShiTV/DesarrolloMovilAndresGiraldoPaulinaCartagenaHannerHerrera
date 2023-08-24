@@ -16,24 +16,33 @@ import {
 const App = () => {
   return (
     <SafeAreaView style={style.contains}>
+      <Text style={style.title}>GESTION DE HORAS{''}</Text>
       <Text style={style.title}>Gestion de {''}</Text>
-      <Text style={style.title}>Horas</Text>
-      <Button title="Iniciar Horas"></Button>
+      
 
       <Pressable
         onPress={() => {
           console.log('Presionaste El Boton');
         }}>
-        <Text style={style.title}>Este es un boton</Text>
+        <Text style={style.title}>Este es un bo</Text>
       </Pressable>
-      {/* <View style={style.campo}>
-        <Text style={style.label}>Nombre Propietario</Text>
+      {<View style={style.campo}>
+        <Text style={style.label}>Nombre trabajador</Text>
         <TextInput
           style={style.input}
-          placeholder="Nombre Propietario"
+          placeholder="Nombre trabajador"
           placeholderTextColor={'#ccc'}
         />
-      </View> */}
+        <Text style={style.label}>Contraseña</Text>
+        <TextInput
+          style={style.input}
+          placeholder="contraseña"
+          placeholderTextColor={'#ccc'}
+        />
+        <Button title="login"></Button>
+        
+      </View> }
+      
     </SafeAreaView>
   );
 };
