@@ -12,18 +12,18 @@ import {//elementos y componentes
   TextInput,
   Pressable,
 } from 'react-native';
-import Formulario from './src/components/Formulario';
+import Ingresohoras from './src/components/Ingresohoras';
 
 const App = () => {//array funcion
-  const[modalVisible,setModalVisible] = useState(false)
+  const [modalVisible, setModalVisible] = useState(false)
 
-  const citaHandle=()=>{
+  const citaHandle = () => {
     console.log('Se dio Click en el boton')
   }
 
   return (
     //Solo se renderiza el elemento de mayor prioridad,en este caso el de mayor prioridad es safeareaview
-    <SafeAreaView style={style.contains}> 
+    <SafeAreaView style={style.contains}>
       <View>
         <Text style={style.title}>GESTION DE{' '}
           <Text>HORAS</Text>
@@ -33,38 +33,13 @@ const App = () => {//array funcion
         <Pressable onPress={citaHandle} style={style.btnNuevaCita}>
           <Text style={style.btnTextoNuevaCita}>Crear Cita</Text>
         </Pressable>
-        <Formulario 
-          modalVisible = {modalVisible}
-          setModalVisible = {setModalVisible}
-        />
+        {/* <Formulario
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+        /> */}
+        <Ingresohoras name={'Andres'} />
       </View>
-      
 
-      {/* <Pressable
-        onPress={() => {
-          console.log('Presionaste El Boton');
-        }}>
-        <Text style={style.title}>Este es un bo</Text>
-      </Pressable>
-      <View style={style.campo}>
-        <Text style={style.label}>Nombre trabajador</Text>
-        <TextInput
-          style={style.input}
-          placeholder="Nombre trabajador"
-          placeholderTextColor={'#ccc'}
-        />
-        <Text style={style.label}>Contraseña</Text>
-        <TextInput
-          style={style.input}
-          placeholder="contraseña"
-          placeholderTextColor={'#ccc'}
-        />
-        <Text style={style.label}></Text>
-        <Button title="login"></Button>
-        <Text style={style.label}></Text>
-        <Button title="registrar"></Button>
-      </View> */}
-      
     </SafeAreaView>
   );
 };
@@ -110,7 +85,7 @@ const style = StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
     fontSize: 18,
-    fontWeight:'900',
+    fontWeight: '900',
     textTransform: 'uppercase',
   },
 });
