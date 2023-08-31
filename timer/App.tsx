@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
+=======
+import Formulario from './src/components/Formulario';
+>>>>>>> 3981a169ca1c04b060a5bc458adc47d88017477b
 import {//elementos y componentes
   SafeAreaView,
   SafeAreaViewBase,
@@ -12,24 +16,39 @@ import {//elementos y componentes
   TextInput,
   Pressable,
 } from 'react-native';
-import Formulario from './src/components/Formulario';
 
-const App = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+
+const App = () => {//array funcion
+  const [modalVisible, setModalVisible] = useState(false)
+
+  const cerrarModal = () => {
+    setModalVisible(false)
+  }
+
+
 
   return (
     //Solo se renderiza el elemento de mayor prioridad,en este caso el de mayor prioridad es safeareaview
     <SafeAreaView style={style.contains}>
-      <View>
-        <Text style={style.title}>
-          GESTION DE
-          <Text>HORAS</Text>
-        </Text>
-      </View>
+
+      <Text style={style.title}>
+        GESTION DE
+        <Text>HORAS</Text>
+      </Text>
+
+
+      <Pressable
+        style={style.btnNuevaCita}
+        onPress={() => setModalVisible(!modalVisible)}
+      >
+        <Text style={style.btnNuevaCita}>crear cita</Text>
+      </Pressable>
       <Formulario
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
+
       />
+
     </SafeAreaView>
   );
 };
