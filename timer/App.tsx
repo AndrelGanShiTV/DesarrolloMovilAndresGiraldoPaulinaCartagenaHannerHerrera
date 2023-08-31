@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {//elementos y componentes
   SafeAreaView,
   SafeAreaViewBase,
