@@ -14,7 +14,6 @@ import {//elementos y componentes
   Pressable,
 } from 'react-native';
 
-
 const App = () => {//array funcion
   const [modalVisible, setModalVisible] = useState(false)
 
