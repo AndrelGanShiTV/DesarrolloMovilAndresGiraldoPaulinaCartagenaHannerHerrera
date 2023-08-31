@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
-=======
 import Formulario from './src/components/Formulario';
->>>>>>> 3981a169ca1c04b060a5bc458adc47d88017477b
 import {//elementos y componentes
   SafeAreaView,
   SafeAreaViewBase,
