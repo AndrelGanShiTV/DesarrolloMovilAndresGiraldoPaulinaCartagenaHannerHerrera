@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Formulario from './src/components/Formulario';
 import {//elementos y componentes
   SafeAreaView,
   SafeAreaViewBase,
@@ -12,59 +13,38 @@ import {//elementos y componentes
   TextInput,
   Pressable,
 } from 'react-native';
-import Ingresohoras from './src/components/Ingresohoras';
+
 
 const App = () => {//array funcion
   const [modalVisible, setModalVisible] = useState(false)
 
-  const citaHandle = () => {
-    console.log('Se dio Click en el boton')
+  const cerrarModal = () => {
+    setModalVisible(false)
   }
+
+
 
   return (
     //Solo se renderiza el elemento de mayor prioridad,en este caso el de mayor prioridad es safeareaview
     <SafeAreaView style={style.contains}>
-      <View>
-        <Text style={style.title}>
-          GESTION DE
-          <Text>HORAS</Text>
-        </Text>
-      </View>
-      <View>
-        <Pressable onPress={citaHandle} style={style.btnNuevaCita}>
-          <Text style={style.btnTextoNuevaCita}>Crear Cita</Text>
-        </Pressable>
-        <Formulario
-          modalVisible={modalVisible}
-          setModalVisible={setModalVisible}
-        />
-      </View>
+
+      <Text style={style.title}>
+        GESTION DE
+        <Text>HORAS</Text>
+      </Text>
 
 
-      {/* <Pressable
-        onPress={() => {
-          console.log('Presionaste El Boton');
-        }}>
-        <Text style={style.title}>Este es un bo</Text>
+      <Pressable
+        style={style.btnNuevaCita}
+        onPress={() => setModalVisible(!modalVisible)}
+      >
+        <Text style={style.btnNuevaCita}>crear cita</Text>
       </Pressable>
-      <View style={style.campo}>
-        <Text style={style.label}>Nombre trabajador</Text>
-        <TextInput
-          style={style.input}
-          placeholder="Nombre trabajador"
-          placeholderTextColor={'#ccc'}
-        />
-        <Text style={style.label}>Contraseña</Text>
-        <TextInput
-          style={style.input}
-          placeholder="contraseña"
-          placeholderTextColor={'#ccc'}
-        />
-        <Text style={style.label}></Text>
-        <Button title="login"></Button>
-        <Text style={style.label}></Text>
-        <Button title="registrar"></Button>
-      </View> */}
+      <Formulario
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+
+      />
 
     </SafeAreaView>
   );
