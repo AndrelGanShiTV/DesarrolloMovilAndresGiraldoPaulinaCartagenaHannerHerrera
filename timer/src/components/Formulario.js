@@ -8,6 +8,7 @@ import {
   TextInput,
   Pressable,
   Modal,
+  ScrollView,
 } from 'react-native';
 import DatePicker from 'react-native-date-picker'
 
@@ -16,6 +17,7 @@ const Formulario = ({ modalVisible, setModalVisible }) => {
   const [propetario, setPropetario] = useState("")
   const [telefono, setTelefono] = useState("")
   const [sintomas, setSintomas] = useState("")
+  const [Gmail, setGmail] = useState("")
   const [fecha, setFecha] = useState(new Date())
 
 
@@ -25,72 +27,90 @@ const Formulario = ({ modalVisible, setModalVisible }) => {
       visible={modalVisible}
     >
       <SafeAreaView style={style.contains}>
-        <View>
-
-          <Text style={style.title}>Iniciar Sesion</Text>
+        <ScrollView>
           <View>
-            <Text style={style.label}>paciente</Text>
-            <TextInput style={style.input} placeholder='Ingrese nombre de paciente'
-              value={paciente}
-              onChangeText={setPaciente}
-            />
+            <Text style={style.title}>Asignación de Citas</Text>
           </View>
           <View>
-            <Text style={style.label}>propetario</Text>
-            <TextInput style={style.input} placeholder='Ingrese nombre del propietario'
+            <Text style={style.title}>Nombre de paciente</Text>
+            <TextInput
+              style={style.input}
+              placeholder='Ingrese nombre paciente'
+              placeholderTextColor={"#666"}
+              keyboardType='number-pad'
+              maxLength={10}
+              value={telefono}
+              onChangeText={setPaciente}
+            >
+            </TextInput>
+          </View>
+          <View>
+            <Text style={style.title}>Nombre de propetario</Text>
+            <TextInput
+              style={style.input} placeholder='Ingrese nombre del propietario'
               value={propetario}
               onChangeText={setPropetario}
-            />
+            ></TextInput>
           </View>
           <View>
-            <Text style={style.label}>telefono</Text>
-            <TextInput style={style.input}
+            <Text style={style.title}>Telefono</Text>
+            <TextInput
+              style={style.input}
               placeholder='Ingrese telefono'
               placeholderTextColor={"#666"}
               keyboardType='number-pad'
               maxLength={10}
               value={telefono}
               onChangeText={setTelefono}
-            />
+
+            ></TextInput>
           </View>
           <View>
-            <Text style={style.label}>sintomas</Text>
-            <TextInput style={style.input}
+            <Text style={style.title}>Gmail</Text>
+            <TextInput
+              style={style.input} placeholder='Ingrese Gmail'
+              value={Gmail}
+              onChangeText={setGmail}
+            ></TextInput>
+          </View>
+          <View>
+            <Text style={style.title}>Fecha cita</Text>
+            <DatePicker
+              locale='es'
+              mode='date'
+              date={fecha}
+              onDateChange={() => setFecha(new Date())}
+            />
+
+          </View>
+          <View>
+            <Text style={style.title}>Sintomas</Text>
+            <TextInput
+              style={style.input}
               placeholder='sintomas'
               placeholderTextColor={"#666"}
               numberOfLines={5}
               multiline={true}
               value={sintomas}
               onChangeText={setSintomas}
-            />
+            ></TextInput>
           </View>
           <View>
-            <Text style={style.label}>fecha</Text>
-            <View style={style.label}>
-              <datePicker
-                locale="es"
-                mode="Date"
-                onDatechange={(date) => setFecha(date)}
-              />
-            </View>
+            <Pressable style={style.btnNuevaCita}
+              onPress={() => { cerrarModal }}
+            >
+              <Text>Guardar</Text>
+            </Pressable>
+            <Pressable
+              style={style.btnNuevaCita}
+              onLongPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={style.btnNuevaCita}>cancelar</Text>
+            </Pressable>
           </View>
-          <Pressable style={style.btnNuevaCita}
-            onPress={() => { cerrarModal }}
-          >
-            <Text>Guardar</Text>
-          </Pressable>
-
-          <Pressable
-            style={style.btnNuevaCita}
-            onLongPress={() => setModalVisible(!modalVisible)}
-          >
-            <Text style={style.btnNuevaCita}>cancelar</Text>
-          </Pressable>
-
-        </View>
-
-      </SafeAreaView>
-    </Modal>
+        </ScrollView>
+      </SafeAreaView >
+    </Modal >
   );
 };
 
