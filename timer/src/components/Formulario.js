@@ -67,7 +67,7 @@ const Formulario = ({ modalVisible, setModalVisible }) => {
           <View>
             <Text style={style.label}>fecha</Text>
             <View style={style.label}>
-              <datePicker
+              <DatePicker
                 locale="es"
                 mode="Date"
                 onDatechange={(date) => setFecha(date)}
