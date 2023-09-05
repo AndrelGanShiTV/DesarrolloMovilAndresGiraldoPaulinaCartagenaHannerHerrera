@@ -14,14 +14,17 @@ import {//elementos y componentes
   TextInput,
   Pressable,
 } from 'react-native';
+import Login from './src/components/Login';
 
 const App = () => {//array funcion
   const [modalVisible, setModalVisible] = useState(false)
   const [modalIngresoHoras, setModalIngresoHoras] = useState(false)
+  const [modalLogin, setModalLogin] = useState(false)
 
   const cerrarModal = () => {
     setModalVisible(false)
     setModalIngresoHoras(false)
+    setModalLogin(false)
   }
 
   return (
@@ -54,6 +57,16 @@ const App = () => {//array funcion
         setModalIngresoHoras={setModalIngresoHoras}
       />
 
+      <Pressable
+        style={style.btnNuevaCita}
+        onPress={() => setModalLogin(!modalLogin)}
+      >
+        <Text style={style.btnTextoNuevaCita}>LOGIN</Text>
+      </Pressable>
+      <Login
+        modalLogin={modalLogin}
+        setModalLogin={setModalLogin}
+      />
     </SafeAreaView>
   );
 };
