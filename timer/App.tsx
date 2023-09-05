@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import Formulario from './src/components/Formulario';
-<<<<<<< HEAD
 import Login from './src/components/Login';
-=======
 import IngresoHoras from './src/components/IngresoHoras';
->>>>>>> pauli
 import {//elementos y componentes
   SafeAreaView,
   SafeAreaViewBase,
@@ -18,22 +15,15 @@ import {//elementos y componentes
   TextInput,
   Pressable,
 } from 'react-native';
-import Login from './src/components/Login';
+
 
 const App = () => {//array funcion
   const [modalVisible, setModalVisible] = useState(false)
-<<<<<<< HEAD
-=======
   const [modalIngresoHoras, setModalIngresoHoras] = useState(false)
->>>>>>> pauli
   const [modalLogin, setModalLogin] = useState(false)
-
   const cerrarModal = () => {
     setModalVisible(false)
-<<<<<<< HEAD
-=======
     setModalIngresoHoras(false)
->>>>>>> pauli
     setModalLogin(false)
   }
 
@@ -42,12 +32,7 @@ const App = () => {//array funcion
     <SafeAreaView style={style.contains}>
 
       <Text style={style.title}>
-<<<<<<< HEAD
-        GESTION DE
-        <Text> HORAS</Text>
-=======
         GESTION DE HORAS
->>>>>>> pauli
       </Text>
 
       <Pressable
@@ -59,17 +44,6 @@ const App = () => {//array funcion
       <Formulario
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
-
-      />
-      <Pressable
-        style={style.btnNuevaCita}
-        onPress={() => setModalLogin(!modalLogin)}
-      >
-        <Text style={style.btnNuevaCita}>login</Text>
-      </Pressable>
-      <Login
-        modalLogin={modalLogin}
-        setModalLogin={setModalLogin}
 
       />
 
