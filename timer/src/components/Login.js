@@ -53,7 +53,7 @@ const Login = ({ modalLogin, setModalLogin }) => {
                     <View>
                         <Pressable
                             style={style.btnNuevaCita}
-                            onLongPress={() => setModalLogin(!modalLogin)}
+                            onPress={() => setModalLogin(!modalLogin)}
                         >
                             <Text style={style.btnTextoNuevaCita}>Ingresar</Text>
                         </Pressable>
