@@ -96,6 +96,15 @@ const Formulario = ({ modalVisible, setModalVisible }) => {
             ></TextInput>
           </View>
           <View>
+            <Text style={style.label}>fecha</Text>
+            <View style={style.label}>
+              <DatePicker
+                locale="es"
+                mode="date"
+                date={fecha}
+                onDatechange={() => setFecha(new Date())}
+              />
+            </View>
             <Pressable style={style.btnNuevaCita}
               onPress={() => { cerrarModal }}
             >
