@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Formulario from './src/components/Formulario';
+import Login from './src/components/Login';
 import {//elementos y componentes
   SafeAreaView,
   SafeAreaViewBase,
@@ -17,9 +18,11 @@ import {//elementos y componentes
 
 const App = () => {//array funcion
   const [modalVisible, setModalVisible] = useState(false)
+  const [modalLogin, setModalLogin] = useState(false)
 
   const cerrarModal = () => {
     setModalVisible(false)
+    setModalLogin(false)
   }
 
 
@@ -30,7 +33,7 @@ const App = () => {//array funcion
 
       <Text style={style.title}>
         GESTION DE
-        <Text>HORAS</Text>
+        <Text> HORAS</Text>
       </Text>
 
 
@@ -43,6 +46,18 @@ const App = () => {//array funcion
       <Formulario
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
+
+      />
+      <Pressable
+        style={style.btnNuevaCita}
+        onPress={() => setModalLogin(!modalLogin)}
+      >
+        <Text style={style.btnNuevaCita}>login</Text>
+      </Pressable>
+      <Login
+        modalLogin={modalLogin}
+        setModalLogin={setModalLogin}
+
       />
 
     </SafeAreaView>
