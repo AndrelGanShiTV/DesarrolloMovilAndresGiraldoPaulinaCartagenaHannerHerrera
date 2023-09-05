@@ -96,7 +96,6 @@ const Formulario = ({ modalVisible, setModalVisible }) => {
             ></TextInput>
           </View>
           <View>
-<<<<<<< HEAD
             <Text style={style.label}>fecha</Text>
             <View style={style.label}>
               <DatePicker
@@ -105,7 +104,6 @@ const Formulario = ({ modalVisible, setModalVisible }) => {
                 onDatechange={(date) => setFecha(date)}
               />
             </View>
-=======
             <Pressable style={style.btnNuevaCita}
               onPress={() => { cerrarModal }}
             >
@@ -117,7 +115,6 @@ const Formulario = ({ modalVisible, setModalVisible }) => {
             >
               <Text style={style.btnNuevaCita}>cancelar</Text>
             </Pressable>
->>>>>>> dfafd5c55f4883e9f7ddd03e4778e4f15aa09eae
           </View>
         </ScrollView>
       </SafeAreaView >
