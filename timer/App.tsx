@@ -26,7 +26,6 @@ const App = () => {//array funcion
     setModalIngresoHoras(false)
     setModalLogin(false)
   }
-
   return (
     //Solo se renderiza el elemento de mayor prioridad,en este caso el de mayor prioridad es safeareaview
     <SafeAreaView style={style.contains}>
