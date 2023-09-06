@@ -38,7 +38,7 @@ const Novedades = ({ modalNovedades, setmodalNovedades }) => {
                         style={style.btnNuevaCita}
                         onPress={() => setmodalNovedades(!modalNovedades)}
                     >
-                        <Text style={style.btnTextoNuevaCita}>Ingresar</Text>
+                        <Text style={style.btnTextoNuevaCita}>salir</Text>
                     </Pressable>
 
                     <Pressable

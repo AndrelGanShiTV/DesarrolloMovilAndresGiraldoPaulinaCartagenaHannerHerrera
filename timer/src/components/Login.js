@@ -17,6 +17,7 @@ const Login = ({ modalLogin, setModalLogin }) => {
     const [contraseña, setContraseña] = useState("")
     const [modalRegistrar, setModalRegistrar] = useState(false)
 
+
     const cerrarModal = () => {
         setModalRegistrar(false)
     }

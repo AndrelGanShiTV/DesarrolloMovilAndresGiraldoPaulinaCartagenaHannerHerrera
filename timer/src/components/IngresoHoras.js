@@ -14,8 +14,26 @@ import DatePicker from 'react-native-date-picker'
 
 const Formulario = ({ modalIngresoHoras, setModalIngresoHoras }) => {
     const [fecha, setFecha] = useState(new Date())
-    const [hora, setHora] = useState(new Date())
-
+    const [horaEntrada, setHoraEntrada] = useState(new Date())
+    const [horaSalida, setHoraSalida] = useState(new Date())
+    const [totalHoras, setTotalHoras] = useState(null);
+    const FormHour = {
+        id: new Date(),
+        fecha,
+        horaEntrada,
+        horaSalida,
+        totalHoras
+    }
+    const ListHour = []
+    // function calcularTotal() {
+    //     totalHoras = (horaSalida.getTotal() - horaEntrada.getTotal()) / (1000 * 60 * 60)
+    // }
+    function InsertHour() {
+        ListHour.push(FormHour)
+        for (let index = 0; index < ListHour.length; index++) {
+            console.log(ListHour[index].totalHoras)
+        }
+    }
     return (
         <Modal
             animationType='slide'
@@ -37,18 +55,28 @@ const Formulario = ({ modalIngresoHoras, setModalIngresoHoras }) => {
                         />
                     </View>
                     <View>
-                        <Text style={style.label}>Seleccione la Hora:</Text>
+                        <Text style={style.label}>Seleccione la Hora Entrada:</Text>
                         <DatePicker
                             locale='es'
                             mode='time'
-                            date={hora}
-                            onDateChange={() => setHora(fecha)}
+                            date={horaEntrada}
+                            onDateChange={() => setHoraEntrada(horaEntrada)}
+                            style={style.date}
+                        />
+                    </View>
+                    <View>
+                        <Text style={style.label}>Seleccione la Hora Final:</Text>
+                        <DatePicker
+                            locale='es'
+                            mode='time'
+                            date={horaSalida}
+                            onDateChange={() => setHoraSalida(horaSalida)}
                             style={style.date}
                         />
                     </View>
                     <View>
                         <Pressable style={style.btnNuevaCita}
-                            onPress={() => { cerrarModal }}
+                            onPress={() => InsertHour()}
                         >
                             <Text style={style.btnTextoNuevaCita}>
                                 Guardar

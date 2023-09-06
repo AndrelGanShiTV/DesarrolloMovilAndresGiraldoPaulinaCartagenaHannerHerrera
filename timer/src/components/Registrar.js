@@ -13,9 +13,22 @@ import {
 } from 'react-native';
 
 const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
-    const [nombreusuario, setNombresuario] = useState("")
+    const [nombreusuario, setNombreUsuario] = useState("")
     const [contraseñaregi, setContraseñaregi] = useState("")
+    const usuario = {
+        id: Date.now(),
+        nombreusuario: nombreusuario,
+        contraseñaregi: contraseñaregi
+    }
+    const minero = []
 
+    function registrar() {
+        minero.push(usuario)
+        for (let index = 0; index < minero.length; index++) {
+            console.log(minero[index].nombreusuario)
+            console.log(minero[index].contraseñaregi)
+        }
+    }
     return (
         <Modal
             animationType='slide'
@@ -32,18 +45,19 @@ const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
                             style={style.input}
                             placeholder='Ingrese usuario'
                             placeholderTextColor={'#ccc'}
-
                             value={nombreusuario}
-                            onChangeText={setNombresuario}
+                            onChangeText={setNombreUsuario}
                         >
                         </TextInput>
                     </View>
                     <View>
                         <Text style={style.title}>Contraseña</Text>
                         <TextInput
+                            style={style.input}
                             placeholder="contraseña"
                             placeholderTextColor={'#ccc'}
                             value={contraseñaregi}
+                            maxLength={8}
                             onChangeText={setContraseñaregi}
                         >
                         </TextInput>
@@ -52,9 +66,15 @@ const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
                     <View>
                         <Pressable
                             style={style.btnNuevaCita}
-                            onPress={() => setModalRegistrar(!modalRegistrar)}
+                            onPress={() => registrar()}
                         >
                             <Text style={style.btnTextoNuevaCita}>Registar</Text>
+                        </Pressable>
+                        <Pressable
+                            style={style.btnNuevaCita}
+                            onPress={() => setModalRegistrar(!modalRegistrar)}
+                        >
+                            <Text style={style.btnTextoNuevaCita}>Cancelar</Text>
                         </Pressable>
                     </View>
                 </ScrollView>

@@ -22,7 +22,7 @@ const Vacaciones = ({ modalVacaciones, setModalVacaciones }) => {
         >
             <SafeAreaView>
                 <Text style={style.title}>
-                    Vaciciones
+                    Vacaciones
                 </Text>
                 <ScrollView>
                     <View>
