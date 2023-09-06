@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     //elementos y componentes
     SafeAreaView,
@@ -12,6 +12,9 @@ import {
 } from 'react-native';
 
 function ConsultaHoras({ modalConsultaHoras, setModalConsultaHoras }) {
+    const [fechaInicio, setFechaInicio] = useState(new Date())
+    const [fechaFinal, setFechaFinal] = useState(new Date())
+
     return (
         <Modal
             animationType='slide'
@@ -20,25 +23,25 @@ function ConsultaHoras({ modalConsultaHoras, setModalConsultaHoras }) {
             <SafeAreaView style={style.contains}>
                 <ScrollView>
                     <View>
-                        <Text style={style.title}>Registrar Horas</Text>
+                        <Text style={style.title}>Consultar Horas</Text>
                     </View>
                     <View>
-                        <Text style={style.label}>Seleccione el Dia:</Text>
+                        <Text style={style.label}>Seleccione Fecha Inicio:</Text>
                         <DatePicker
                             locale='es'
                             mode='date'
-                            date={fecha}
-                            onDateChange={() => setFecha(fecha)}
+                            date={fechaInicio}
+                            onDateChange={() => setFechaInicio(fechaInicio)}
                             style={style.date}
                         />
                     </View>
                     <View>
-                        <Text style={style.label}>Seleccione la Hora:</Text>
+                        <Text style={style.label}>Seleccione Fecha Final:</Text>
                         <DatePicker
                             locale='es'
-                            mode='time'
-                            date={hora}
-                            onDateChange={() => setHora(fecha)}
+                            mode='date'
+                            date={fechaFinal}
+                            onDateChange={() => setFechaFinal(fechaFinal)}
                             style={style.date}
                         />
                     </View>
@@ -47,7 +50,7 @@ function ConsultaHoras({ modalConsultaHoras, setModalConsultaHoras }) {
                             onPress={() => { cerrarModal }}
                         >
                             <Text style={style.btnTextoNuevaCita}>
-                                Guardar
+                                Consultar
                             </Text>
                         </Pressable>
                         <Pressable
