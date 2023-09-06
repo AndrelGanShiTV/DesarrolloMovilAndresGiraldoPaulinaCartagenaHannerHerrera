@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Registrar from './Registrar';
 import {
     //elementos y componentes
     SafeAreaView,
@@ -14,9 +15,7 @@ import {
 const Login = ({ modalLogin, setModalLogin }) => {
     const [usuario, setUsuario] = useState("")
     const [contraseña, setContraseña] = useState("")
-
-
-
+    const [modalRegistrar, setModalRegistrar] = useState(false)
 
     return (
         <Modal
@@ -57,6 +56,16 @@ const Login = ({ modalLogin, setModalLogin }) => {
                         >
                             <Text style={style.btnTextoNuevaCita}>Ingresar</Text>
                         </Pressable>
+                        <Pressable
+                            style={style.btnNuevaCita}
+                            onPress={() => setModalRegistrar(!modalRegistrar)}
+                        >
+                            <Text style={style.btnTextoNuevaCita}>Registrar</Text>
+                        </Pressable>
+                        <Registrar
+                            modalRegistrar={modalRegistrar}
+                            setModalRegistrar={setModalRegistrar}
+                        />
                     </View>
                 </ScrollView>
             </SafeAreaView>
