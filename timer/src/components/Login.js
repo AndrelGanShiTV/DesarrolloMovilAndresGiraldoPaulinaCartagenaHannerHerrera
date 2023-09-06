@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Registrar from './Registrar';
+import Registrar from './Register';
 import {
     //elementos y componentes
     SafeAreaView,
