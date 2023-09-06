@@ -16,8 +16,6 @@ const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
     const [nombreusuario, setNombresuario] = useState("")
     const [contraseñaregi, setContraseñaregi] = useState("")
 
-
-
     return (
         <Modal
             animationType='slide'
