@@ -17,6 +17,10 @@ const Login = ({ modalLogin, setModalLogin }) => {
     const [contraseña, setContraseña] = useState("")
     const [modalRegistrar, setModalRegistrar] = useState(false)
 
+    const cerrarModal = () => {
+        setModalRegistrar(false)
+    }
+
     return (
         <Modal
             animationType='slide'
@@ -56,11 +60,12 @@ const Login = ({ modalLogin, setModalLogin }) => {
                         >
                             <Text style={style.btnTextoNuevaCita}>Ingresar</Text>
                         </Pressable>
+
                         <Pressable
                             style={style.btnNuevaCita}
                             onPress={() => setModalRegistrar(!modalRegistrar)}
                         >
-                            <Text style={style.btnTextoNuevaCita}>Registrar</Text>
+                            <Text style={style.btnTextoNuevaCita}>registrar</Text>
                         </Pressable>
                         <Registrar
                             modalRegistrar={modalRegistrar}

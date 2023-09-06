@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Formulario from './src/components/Formulario';
 import Login from './src/components/Login';
 import IngresoHoras from './src/components/IngresoHoras';
+import Novedades from './src/components/Novedades';
+
 import {//elementos y componentes
   SafeAreaView,
   SafeAreaViewBase,
@@ -21,10 +23,14 @@ const App = () => {//array funcion
   const [modalVisible, setModalVisible] = useState(false)
   const [modalIngresoHoras, setModalIngresoHoras] = useState(false)
   const [modalLogin, setModalLogin] = useState(false)
+  const [modalNovedades, setModalNovedades] = useState(false)
+
   const cerrarModal = () => {
     setModalVisible(false)
     setModalIngresoHoras(false)
     setModalLogin(false)
+    setModalNovedades(false)
+
   }
   return (
     //Solo se renderiza el elemento de mayor prioridad,en este caso el de mayor prioridad es safeareaview
@@ -67,6 +73,19 @@ const App = () => {//array funcion
         modalLogin={modalLogin}
         setModalLogin={setModalLogin}
       />
+
+      <Pressable
+        style={style.btnNuevaCita}
+        onPress={() => setModalNovedades(!modalNovedades)}
+      >
+        <Text style={style.btnTextoNuevaCita}>Novedades</Text>
+      </Pressable>
+      <Novedades
+        modalNovedades={modalNovedades}
+        setmodalNovedades={setModalNovedades}
+      />
+
+
     </SafeAreaView>
   );
 };
