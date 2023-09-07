@@ -36,7 +36,9 @@ const App = () => {//array funcion
     //Solo se renderiza el elemento de mayor prioridad,en este caso el de mayor prioridad es safeareaview
     <SafeAreaView style={style.contains}>
 
-      <Text style={style.title}>
+
+<View >
+<Text style={style.Titul} >
         GESTION DE HORAS
       </Text>
 
@@ -84,7 +86,7 @@ const App = () => {//array funcion
         modalNews={modalNews}
         setmodalNews={setModalNews}
       />
-
+</View>
 
     </SafeAreaView>
   );
@@ -103,34 +105,20 @@ const style = StyleSheet.create({
     fontSize: 24,
     margin : 20,
     padding: 30,
-    color: 'black',
-    backgroundColor: 'gray',
-    marginTop: 150,
-    borderRadius: 50,
   },
   contains: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'gray',
-  },
-  title: {
-    marginHorizontal: 20,
-    marginVertical: 20,
-    fontFamily: 'caption',
-    fontSize: 30,
-    color: '#5195FF',
-    textAlign: 'center',
   },
   btnNuevaCita: {
     backgroundColor: '#6D28D9',
-
+    padding: 10,
     borderRadius: 5,
     margin: 10,
   },
   btnTextoNuevaCita: {
     textAlign: 'center',
-    color: '#fff',
     fontSize: 20,
     fontWeight: '500',
     textTransform: 'uppercase',
