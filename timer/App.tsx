@@ -56,7 +56,7 @@ const App = () => {//array funcion
         style={style.btnNuevaCita}
         onPress={() => setModalEnterHour(!modalEnterHour)}
       >
-        <Text style={style.btnTextoNuevaCita}>Enter Hour</Text>
+        <Text style={style.btnTextoNuevaCita}>Registro Horas</Text>
       </Pressable>
       <EnterHour
         modalEnterHour={modalEnterHour}
@@ -78,7 +78,7 @@ const App = () => {//array funcion
         style={style.btnNuevaCita}
         onPress={() => setModalNews(!modalNews)}
       >
-        <Text style={style.btnTextoNuevaCita}>News</Text>
+        <Text style={style.btnTextoNuevaCita}>Novedades</Text>
       </Pressable>
       <News
         modalNews={modalNews}
