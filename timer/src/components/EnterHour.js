@@ -12,17 +12,17 @@ import {
 } from 'react-native';
 import DatePicker from 'react-native-date-picker'
 
-const Formulario = ({ modalIngresoHoras, setModalIngresoHoras }) => {
-    const [fecha, setFecha] = useState(new Date())
-    const [horaEntrada, setHoraEntrada] = useState(new Date())
-    const [horaSalida, setHoraSalida] = useState(new Date())
-    const [totalHoras, setTotalHoras] = useState(null);
+const EnterHour = ({ modalEnterHour, setModalEnterHour }) => {
+    const [date, setDate] = useState(new Date())
+    const [timeIn, setTimeIn] = useState(new Date())
+    const [timeOut, setTimeOut] = useState(new Date())
+    const [totalHour, setTotalHour] = useState(null);
     const FormHour = {
         id: new Date(),
-        fecha,
-        horaEntrada,
-        horaSalida,
-        totalHoras
+        date,
+        timeIn,
+        timeOut,
+        totalHour
     }
     const ListHour = []
     // function calcularTotal() {
@@ -37,7 +37,7 @@ const Formulario = ({ modalIngresoHoras, setModalIngresoHoras }) => {
     return (
         <Modal
             animationType='slide'
-            visible={modalIngresoHoras}
+            visible={modalEnterHour}
         >
             <SafeAreaView style={style.contains}>
                 <ScrollView>
@@ -49,8 +49,8 @@ const Formulario = ({ modalIngresoHoras, setModalIngresoHoras }) => {
                         <DatePicker
                             locale='es'
                             mode='date'
-                            date={fecha}
-                            onDateChange={() => setFecha(fecha)}
+                            date={date}
+                            onDateChange={() => setDate(date)}
                             style={style.date}
                         />
                     </View>
@@ -59,8 +59,8 @@ const Formulario = ({ modalIngresoHoras, setModalIngresoHoras }) => {
                         <DatePicker
                             locale='es'
                             mode='time'
-                            date={horaEntrada}
-                            onDateChange={() => setHoraEntrada(horaEntrada)}
+                            date={timeIn}
+                            onDateChange={() => setTimeIn(timeIn)}
                             style={style.date}
                         />
                     </View>
@@ -69,25 +69,25 @@ const Formulario = ({ modalIngresoHoras, setModalIngresoHoras }) => {
                         <DatePicker
                             locale='es'
                             mode='time'
-                            date={horaSalida}
-                            onDateChange={() => setHoraSalida(horaSalida)}
+                            date={timeOut}
+                            onDateChange={() => setTimeOut(timeOut)}
                             style={style.date}
                         />
                     </View>
                     <View>
-                        <Pressable style={style.btnNuevaCita}
+                        <Pressable style={style.btn}
                             onPress={() => InsertHour()}
                         >
-                            <Text style={style.btnTextoNuevaCita}>
-                                Guardar
+                            <Text style={style.btnText}>
+                                Save
                             </Text>
                         </Pressable>
                         <Pressable
-                            style={style.btnNuevaCita}
-                            onPress={() => setModalIngresoHoras(!modalIngresoHoras)}
+                            style={style.btn}
+                            onPress={() => setModalEnterHour(!modalEnterHour)}
                         >
-                            <Text style={style.btnTextoNuevaCita}>
-                                Cancelar
+                            <Text style={style.btnText}>
+                                Cancel
                             </Text>
                         </Pressable>
                     </View>
@@ -125,14 +125,15 @@ const style = StyleSheet.create({
         borderRadius: 10,
         marginHorizontal: 10,
     },
-    btnNuevaCita: {
-        flex: 1,
+    btn: {
         backgroundColor: '#6D28D9',
         padding: 15,
         borderRadius: 5,
-        marginVertical: 5,
+        marginVertical: 20,
+        marginHorizontal: 20,
+
     },
-    btnTextoNuevaCita: {
+    btnText: {
         textAlign: 'center',
         color: '#fff',
         fontSize: 18,
