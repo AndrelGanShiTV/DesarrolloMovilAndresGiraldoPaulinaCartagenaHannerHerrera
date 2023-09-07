@@ -142,4 +142,4 @@ const style = StyleSheet.create({
     },
 });
 
-export default Formulario;
+export default EnterHour;

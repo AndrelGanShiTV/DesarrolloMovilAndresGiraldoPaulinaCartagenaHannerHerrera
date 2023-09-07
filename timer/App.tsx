@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Formulario from './src/components/Formulario';
 import Login from './src/components/Login';
-import IngresoHoras from './src/components/IngresoHoras';
+import EnterHour from './src/components/EnterHour';
 import News from './src/components/News';
 
 import {//elementos y componentes
@@ -21,13 +21,13 @@ import {//elementos y componentes
 
 const App = () => {//array funcion
   const [modalVisible, setModalVisible] = useState(false)
-  const [modalIngresoHoras, setModalIngresoHoras] = useState(false)
+  const [modalEnterHour, setModalEnterHour] = useState(false)
   const [modalLogin, setModalLogin] = useState(false)
   const [modalNews, setModalNews] = useState(false)
 
   const cerrarModal = () => {
     setModalVisible(false)
-    setModalIngresoHoras(false)
+    setModalEnterHour(false)
     setModalLogin(false)
     setModalNews(false)
 
@@ -54,13 +54,13 @@ const App = () => {//array funcion
 
       <Pressable
         style={style.btnNuevaCita}
-        onPress={() => setModalIngresoHoras(!modalIngresoHoras)}
+        onPress={() => setModalEnterHour(!modalEnterHour)}
       >
-        <Text style={style.btnTextoNuevaCita}>Registro Horas</Text>
+        <Text style={style.btnTextoNuevaCita}>Enter Hour</Text>
       </Pressable>
-      <IngresoHoras
-        modalIngresoHoras={modalIngresoHoras}
-        setModalIngresoHoras={setModalIngresoHoras}
+      <EnterHour
+        modalEnterHour={modalEnterHour}
+        setModalEnterHour={setModalEnterHour}
       />
 
       <Pressable
