@@ -91,10 +91,28 @@ const App = () => {//array funcion
 };
 //se crea una costante, crear (create) con los parametros
 const style = StyleSheet.create({
-  contains: {
-    backgroundColor: '#fff',
+  View: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'gray',
+    
+  },
+
+  Titul: {
+    fontSize: 24,
+    margin : 20,
+    padding: 30,
+    color: 'black',
+    backgroundColor: 'gray',
+    marginTop: 150,
+    borderRadius: 50,
+  },
+  contains: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'gray',
   },
   title: {
     marginHorizontal: 20,
@@ -106,7 +124,7 @@ const style = StyleSheet.create({
   },
   btnNuevaCita: {
     backgroundColor: '#6D28D9',
-    padding: 10,
+
     borderRadius: 5,
     margin: 10,
   },
