@@ -10,54 +10,54 @@ import {
     ScrollView,
 } from 'react-native';
 
-function ConsultaHoras({ modalConsultaHoras, setModalConsultaHoras }) {
-    const [fechaInicio, setFechaInicio] = useState(new Date())
-    const [fechaFinal, setFechaFinal] = useState(new Date())
+function QueryHour({ modalQueryHour, setModalQueryHour }) {
+    const [dateStart, setDateStart] = useState(new Date())
+    const [dateFinal, setDateFinal] = useState(new Date())
 
     return (
         <Modal
             animationType='slide'
-            visible={modalConsultaHoras}
+            visible={modalQueryHour}
         >
             <SafeAreaView style={style.contains}>
                 <ScrollView>
                     <View>
-                        <Text style={style.title}>Consultar Horas</Text>
+                        <Text style={style.title}>Search Hour</Text>
                     </View>
                     <View>
-                        <Text style={style.label}>Seleccione Fecha Inicio:</Text>
+                        <Text style={style.label}>Select Start Date:</Text>
                         <DatePicker
                             locale='es'
                             mode='date'
-                            date={fechaInicio}
-                            onDateChange={() => setFechaInicio(fechaInicio)}
+                            date={dateStart}
+                            onDateChange={() => setDateStart(dateStart)}
                             style={style.date}
                         />
                     </View>
                     <View>
-                        <Text style={style.label}>Seleccione Fecha Final:</Text>
+                        <Text style={style.label}>Select Final Date:</Text>
                         <DatePicker
                             locale='es'
                             mode='date'
-                            date={fechaFinal}
-                            onDateChange={() => setFechaFinal(fechaFinal)}
+                            date={dateFinal}
+                            onDateChange={() => setDateFinal(dateFinal)}
                             style={style.date}
                         />
                     </View>
                     <View>
-                        <Pressable style={style.btnNuevaCita}
-                            onPress={() => setModalConsultaHoras(!modalConsultaHoras)}
+                        <Pressable style={style.btn}
+                            onPress={() => setModalQueryHour(!modalQueryHour)}
                         >
-                            <Text style={style.btnTextoNuevaCita}>
-                                Consultar
+                            <Text style={style.btnText}>
+                                Search
                             </Text>
                         </Pressable>
                         <Pressable
-                            style={style.btnNuevaCita}
-                            onPress={() => setModalConsultaHoras(!modalConsultaHoras)}
+                            style={style.btn}
+                            onPress={() => setModalQueryHour(!modalQueryHour)}
                         >
-                            <Text style={style.btnTextoNuevaCita}>
-                                Cancelar
+                            <Text style={style.btnText}>
+                                Cancel
                             </Text>
                         </Pressable>
                     </View>
@@ -95,14 +95,15 @@ const style = StyleSheet.create({
         borderRadius: 10,
         marginHorizontal: 10,
     },
-    btnNuevaCita: {
-        flex: 1,
+    btn: {
         backgroundColor: '#6D28D9',
         padding: 15,
         borderRadius: 5,
-        marginVertical: 5,
+        marginVertical: 20,
+        marginHorizontal: 20,
+
     },
-    btnTextoNuevaCita: {
+    btnText: {
         textAlign: 'center',
         color: '#fff',
         fontSize: 18,
@@ -111,4 +112,4 @@ const style = StyleSheet.create({
     },
 });
 
-export default ConsultaHoras
+export default QueryHour
