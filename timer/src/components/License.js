@@ -12,36 +12,39 @@ import {
 } from 'react-native';
 import DatePicker from 'react-native-date-picker'
 
-const Vacaciones = ({ modalVacaciones, setModalVacaciones }) => {
-    const [fecha, setFecha] = useState(new Date())
+
+const License = ({ modalLicense, setModalLicense }) => {
+    const [date, setDate] = useState(new Date())
+
+
 
     return (
         <Modal
             animationType='slide'
-            visible={modalVacaciones}
+            visible={modalLicense}
         >
             <SafeAreaView>
                 <Text style={style.title}>
-                    Vacaciones
+                    License
                 </Text>
                 <ScrollView>
                     <View>
-                        <Text style={style.label}>Seleccione la fecha de inicio de vacaciones:</Text>
+                        <Text style={style.label}>Select license start date:</Text>
                         <DatePicker
                             locale='es'
                             mode='date'
-                            date={fecha}
-                            onDateChange={() => setFecha(fecha)}
+                            date={date}
+                            onDateChange={() => setFecha(date)}
                             style={style.date}
                         />
                     </View>
                     <View>
-                        <Text style={style.label}>Seleccione la fecha de las vacaciones:</Text>
+                        <Text style={style.label}>Select license end date:</Text>
                         <DatePicker
                             locale='es'
                             mode='date'
-                            date={fecha}
-                            onDateChange={() => setFecha(fecha)}
+                            date={date}
+                            onDateChange={() => setFecha(date)}
                             style={style.date}
                         />
                         <View>
@@ -49,15 +52,15 @@ const Vacaciones = ({ modalVacaciones, setModalVacaciones }) => {
                                 onPress={() => { cerrarModal }}
                             >
                                 <Text style={style.btnTextoNuevaCita}>
-                                    Guardar
+                                    keep
                                 </Text>
                             </Pressable>
                             <Pressable
                                 style={style.btnNuevaCita}
-                                onPress={() => setModalVacaciones(!modalVacaciones)}
+                                onPress={() => setModalLicense(!setModalLicense)}
                             >
                                 <Text style={style.btnTextoNuevaCita}>
-                                    Cancelar
+                                    Cancel
                                 </Text>
                             </Pressable>
                         </View>
@@ -110,4 +113,5 @@ const style = StyleSheet.create({
         textTransform: 'uppercase',
     },
 });
-export default Vacaciones
+
+export default License

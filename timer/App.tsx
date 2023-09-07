@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Formulario from './src/components/Formulario';
 import Login from './src/components/Login';
 import IngresoHoras from './src/components/IngresoHoras';
-import Novedades from './src/components/Novedades';
+import News from './src/components/News';
 
 import {//elementos y componentes
   SafeAreaView,
@@ -23,13 +23,13 @@ const App = () => {//array funcion
   const [modalVisible, setModalVisible] = useState(false)
   const [modalIngresoHoras, setModalIngresoHoras] = useState(false)
   const [modalLogin, setModalLogin] = useState(false)
-  const [modalNovedades, setModalNovedades] = useState(false)
+  const [modalNews, setModalNews] = useState(false)
 
   const cerrarModal = () => {
     setModalVisible(false)
     setModalIngresoHoras(false)
     setModalLogin(false)
-    setModalNovedades(false)
+    setModalNews(false)
 
   }
   return (
@@ -76,13 +76,13 @@ const App = () => {//array funcion
 
       <Pressable
         style={style.btnNuevaCita}
-        onPress={() => setModalNovedades(!modalNovedades)}
+        onPress={() => setModalNews(!modalNews)}
       >
-        <Text style={style.btnTextoNuevaCita}>Novedades</Text>
+        <Text style={style.btnTextoNuevaCita}>News</Text>
       </Pressable>
-      <Novedades
-        modalNovedades={modalNovedades}
-        setmodalNovedades={setModalNovedades}
+      <News
+        modalNews={modalNews}
+        setmodalNews={setModalNews}
       />
 
 

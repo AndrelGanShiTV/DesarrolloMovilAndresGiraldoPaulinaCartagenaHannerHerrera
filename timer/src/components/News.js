@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Incapacidades from './Incapacidades';
-import Vacaciones from './Vacaciones';
+import Inability from './Inability';
+import Vacation from './Vacation';
+import License from './License';
 import {
     //elementos y componentes
     SafeAreaView,
@@ -13,54 +14,65 @@ import {
     ScrollView,
 } from 'react-native';
 
-const Novedades = ({ modalNovedades, setmodalNovedades }) => {
-    const [modalIncapacidades, setModalIncapacidades] = useState("")
-    const [modalVacaciones, setModalVacaciones] = useState("")
+const News = ({ modalNews, setmodalNews }) => {
+    const [modalInability, setModalInability] = useState("")
+    const [modalVacation, setModalVacation] = useState("")
+    const [modalLicense, setModalLicense] = useState("")
 
     const cerrarModal = () => {
-        setModalIncapacidades(false)
-        setModalVacaciones(false)
+        setModalInability(false)
+        setModalVacation(false)
+        setModalLicense(false)
     }
 
     return (
         <Modal
             animationType='slide'
-            visible={modalNovedades}
+            visible={modalNews}
         >
             <SafeAreaView style={style.title}>
                 <ScrollView>
 
                     <View>
-                        <Text style={style.title}>Novedades</Text>
+                        <Text style={style.title}>news</Text>
 
                     </View>
                     <Pressable
                         style={style.btnNuevaCita}
-                        onPress={() => setmodalNovedades(!modalNovedades)}
+                        onPress={() => setmodalNews(!modalNews)}
                     >
-                        <Text style={style.btnTextoNuevaCita}>salir</Text>
+                        <Text style={style.btnTextoNuevaCita}>exit</Text>
                     </Pressable>
 
                     <Pressable
                         style={style.btnNuevaCita}
-                        onPress={() => setModalIncapacidades(!modalIncapacidades)}
+                        onPress={() => setModalInability(!modalInability)}
                     >
-                        <Text style={style.btnTextoNuevaCita}>Incapacidad</Text>
+                        <Text style={style.btnTextoNuevaCita}>Inability</Text>
                     </Pressable>
-                    <Incapacidades
-                        modalIncapacidades={modalIncapacidades}
-                        setModalIncapacidades={setModalIncapacidades}
+                    <Inability
+                        modalInability={modalInability}
+                        setModalInability={setModalInability}
                     />
-
                     <Pressable
                         style={style.btnNuevaCita}
-                        onPress={() => setModalVacaciones(!modalVacaciones)}
+                        onPress={() => setModalLicense(!modalLicense)}
                     >
-                        <Text style={style.btnTextoNuevaCita}>vacaciones</Text>
+                        <Text style={style.btnTextoNuevaCita}>License</Text>
                     </Pressable>
-                    <Vacaciones
-                        modalVacaciones={modalVacaciones}
-                        setModalVacaciones={setModalVacaciones}
+                    <License
+                        modalLicense={modalLicense}
+                        setModalLicense={setModalLicense}
+                    />
+                    <Pressable
+                        style={style.btnNuevaCita}
+                        onPress={() => setModalVacation(!modalVacation)}
+                    >
+                        <Text style={style.btnTextoNuevaCita}>Vacation</Text>
+                    </Pressable>
+                    <Vacation
+                        modalVacation={modalVacation}
+                        setModalVacation={setModalVacation}
                     />
 
 
@@ -118,4 +130,4 @@ const style = StyleSheet.create({
     },
 });
 
-export default Novedades;
+export default News

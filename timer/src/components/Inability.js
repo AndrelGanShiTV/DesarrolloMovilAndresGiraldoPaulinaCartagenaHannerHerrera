@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import {
     //elementos y componentes
     SafeAreaView,
@@ -12,38 +13,37 @@ import {
 } from 'react-native';
 import DatePicker from 'react-native-date-picker'
 
-const Incapacidades = ({ modalIncapacidades, setModalIncapacidades }) => {
-    const [fecha, setFecha] = useState(new Date())
-
+const Inability = ({ modalInability, setModalInability }) => {
+    const [date, setDate] = useState(new Date())
 
 
     return (
         <Modal
             animationType='slide'
-            visible={modalIncapacidades}
+            visible={modalInability}
         >
             <SafeAreaView>
                 <Text style={style.title}>
-                    GESTION DE HORAS
+                    Inability
                 </Text>
                 <ScrollView>
                     <View>
-                        <Text style={style.label}>Seleccione la fecha de inicio de incapacidad:</Text>
+                        <Text style={style.label}>Select the disability start date:</Text>
                         <DatePicker
                             locale='es'
                             mode='date'
-                            date={fecha}
-                            onDateChange={() => setFecha(fecha)}
+                            date={date}
+                            onDateChange={() => setDate(date)}
                             style={style.date}
                         />
                     </View>
                     <View>
-                        <Text style={style.label}>Seleccione la fecha de fin de incapacidad:</Text>
+                        <Text style={style.label}>Select the disability end date:</Text>
                         <DatePicker
                             locale='es'
                             mode='date'
-                            date={fecha}
-                            onDateChange={() => setFecha(fecha)}
+                            date={date}
+                            onDateChange={() => setDate(date)}
                             style={style.date}
                         />
                         <View>
@@ -51,15 +51,15 @@ const Incapacidades = ({ modalIncapacidades, setModalIncapacidades }) => {
                                 onPress={() => { cerrarModal }}
                             >
                                 <Text style={style.btnTextoNuevaCita}>
-                                    Guardar
+                                    keep
                                 </Text>
                             </Pressable>
                             <Pressable
                                 style={style.btnNuevaCita}
-                                onPress={() => setModalIncapacidades(!modalIncapacidades)}
+                                onPress={() => setModalInability(!modalInability)}
                             >
                                 <Text style={style.btnTextoNuevaCita}>
-                                    Cancelar
+                                    Cancel
                                 </Text>
                             </Pressable>
                         </View>
@@ -112,4 +112,5 @@ const style = StyleSheet.create({
         textTransform: 'uppercase',
     },
 });
-export default Incapacidades
+
+export default Inability
