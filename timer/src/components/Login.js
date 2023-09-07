@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Registrar from './Registrar';
+import Registrar from './Register';
 import {
     //elementos y componentes
     SafeAreaView,
@@ -11,15 +11,16 @@ import {
     Modal,
     ScrollView,
 } from 'react-native';
+import Register from './Register';
 
 const Login = ({ modalLogin, setModalLogin }) => {
-    const [usuario, setUsuario] = useState("")
-    const [contraseña, setContraseña] = useState("")
-    const [modalRegistrar, setModalRegistrar] = useState(false)
+    const [user, setUser] = useState("")
+    const [password, setPassword] = useState("")
+    const [modalRegister, setModalRegister] = useState(false)
 
 
     const cerrarModal = () => {
-        setModalRegistrar(false)
+        setModalRegister(false)
     }
 
     return (
@@ -33,44 +34,43 @@ const Login = ({ modalLogin, setModalLogin }) => {
                         <Text style={style.title}>Login</Text>
                     </View>
                     <View>
-                        <Text style={style.title}>Nombre de Usuario</Text>
+                        <Text style={style.title}>Username</Text>
                         <TextInput
                             style={style.input}
-                            placeholder='Ingrese usuario'
+                            placeholder='Enter User'
                             placeholderTextColor={'#ccc'}
-
-                            value={usuario}
-                            onChangeText={setUsuario}
+                            value={user}
+                            onChangeText={setUser}
                         >
                         </TextInput>
                     </View>
                     <View>
-                        <Text style={style.title}>Contraseña</Text>
+                        <Text style={style.title}>Password</Text>
                         <TextInput
-                            placeholder="contraseña"
+                            placeholder="Enter Password"
                             placeholderTextColor={'#ccc'}
-                            value={contraseña}
-                            onChangeText={setContraseña}
+                            value={password}
+                            onChangeText={setPassword}
                         >
                         </TextInput>
                     </View>
                     <View>
                         <Pressable
-                            style={style.btnNuevaCita}
+                            style={style.btn}
                             onPress={() => setModalLogin(!modalLogin)}
                         >
-                            <Text style={style.btnTextoNuevaCita}>Ingresar</Text>
+                            <Text style={style.btnText}>Sign in</Text>
                         </Pressable>
 
                         <Pressable
-                            style={style.btnNuevaCita}
-                            onPress={() => setModalRegistrar(!modalRegistrar)}
+                            style={style.btn}
+                            onPress={() => setModalRegistrer(!modalRegister)}
                         >
-                            <Text style={style.btnTextoNuevaCita}>registrar</Text>
+                            <Text style={style.btnText}>Register</Text>
                         </Pressable>
-                        <Registrar
-                            modalRegistrar={modalRegistrar}
-                            setModalRegistrar={setModalRegistrar}
+                        <Register
+                            modalRegister={modalRegister}
+                            setModalRegister={setModalRegister}
                         />
                     </View>
                 </ScrollView>
@@ -100,17 +100,13 @@ const style = StyleSheet.create({
         fontSize: 20,
         fontWeight: '600',
     },
-    campo: {
-        marginTop: 10,
-        marginHorizontal: 30,
-    },
     input: {
         backgroundColor: '#FFF',
         color: '#000',
         padding: 15,
         borderRadius: 10,
     },
-    btnNuevaCita: {
+    btn: {
         backgroundColor: '#6D28D9',
         padding: 15,
         borderRadius: 5,
@@ -118,7 +114,7 @@ const style = StyleSheet.create({
         marginHorizontal: 20,
 
     },
-    btnTextoNuevaCita: {
+    btnText: {
         textAlign: 'center',
         color: '#fff',
         fontSize: 18,

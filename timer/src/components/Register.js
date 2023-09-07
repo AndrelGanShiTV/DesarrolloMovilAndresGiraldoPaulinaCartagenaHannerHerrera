@@ -12,69 +12,69 @@ import {
     ScrollView,
 } from 'react-native';
 
-const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
-    const [nombreusuario, setNombreUsuario] = useState("")
-    const [contraseñaregi, setContraseñaregi] = useState("")
-    const usuario = {
+const Register = ({ modalRegister, setModalRegister }) => {
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const user = {
         id: Date.now(),
-        nombreusuario: nombreusuario,
-        contraseñaregi: contraseñaregi
+        username: username,
+        password: password
     }
-    const minero = []
+    const miner = []
 
-    function registrar() {
-        minero.push(usuario)
-        for (let index = 0; index < minero.length; index++) {
-            console.log(minero[index].nombreusuario)
-            console.log(minero[index].contraseñaregi)
+    function registrer() {
+        miner.push(usuario)
+        for (let index = 0; index < miner.length; index++) {
+            console.log(minero[index].username)
+            console.log(minero[index].password)
         }
     }
     return (
         <Modal
             animationType='slide'
-            visible={modalRegistrar}
+            visible={modalRegister}
         >
             <SafeAreaView style={style.title}>
                 <ScrollView>
                     <View>
-                        <Text style={style.title}>Registrar</Text>
+                        <Text style={style.title}>Registrer</Text>
                     </View>
                     <View>
-                        <Text style={style.title}>Nombre de Usuario</Text>
+                        <Text style={style.title}>Username</Text>
                         <TextInput
                             style={style.input}
-                            placeholder='Ingrese usuario'
+                            placeholder='Enter User'
                             placeholderTextColor={'#ccc'}
-                            value={nombreusuario}
-                            onChangeText={setNombreUsuario}
+                            value={username}
+                            onChangeText={setUsername}
                         >
                         </TextInput>
                     </View>
                     <View>
-                        <Text style={style.title}>Contraseña</Text>
+                        <Text style={style.title}>Password</Text>
                         <TextInput
                             style={style.input}
-                            placeholder="contraseña"
+                            placeholder="Password"
                             placeholderTextColor={'#ccc'}
-                            value={contraseñaregi}
+                            value={password}
                             maxLength={8}
-                            onChangeText={setContraseñaregi}
+                            onChangeText={setPassword}
                         >
                         </TextInput>
                     </View>
 
                     <View>
                         <Pressable
-                            style={style.btnNuevaCita}
-                            onPress={() => registrar()}
+                            style={style.btn}
+                            onPress={() => registrer()}
                         >
-                            <Text style={style.btnTextoNuevaCita}>Registar</Text>
+                            <Text style={style.btnText}>Register</Text>
                         </Pressable>
                         <Pressable
-                            style={style.btnNuevaCita}
-                            onPress={() => setModalRegistrar(!modalRegistrar)}
+                            style={style.btn}
+                            onPress={() => setModalRegister(!modalRegister)}
                         >
-                            <Text style={style.btnTextoNuevaCita}>Cancelar</Text>
+                            <Text style={style.btnText}>Cancel</Text>
                         </Pressable>
                     </View>
                 </ScrollView>
@@ -114,7 +114,7 @@ const style = StyleSheet.create({
         padding: 15,
         borderRadius: 10,
     },
-    btnNuevaCita: {
+    btn: {
         backgroundColor: '#6D28D9',
         padding: 15,
         borderRadius: 5,
@@ -122,7 +122,7 @@ const style = StyleSheet.create({
         marginHorizontal: 20,
 
     },
-    btnTextoNuevaCita: {
+    btnText: {
         textAlign: 'center',
         color: '#fff',
         fontSize: 18,
@@ -131,4 +131,4 @@ const style = StyleSheet.create({
     },
 });
 
-export default Registrar
+export default Register;
