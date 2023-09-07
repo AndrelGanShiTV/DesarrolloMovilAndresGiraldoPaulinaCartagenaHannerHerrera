@@ -37,13 +37,13 @@ const Register = ({ modalRegister, setModalRegister }) => {
             <SafeAreaView style={style.title}>
                 <ScrollView>
                     <View>
-                        <Text style={style.title}>Registrar</Text>
+                        <Text style={style.title}>Registrer</Text>
                     </View>
                     <View>
-                        <Text style={style.title}>Nombre de Usuario</Text>
+                        <Text style={style.title}>Username</Text>
                         <TextInput
                             style={style.input}
-                            placeholder='Ingrese usuario'
+                            placeholder='Enter User'
                             placeholderTextColor={'#ccc'}
                             value={username}
                             onChangeText={setUsername}
@@ -51,10 +51,10 @@ const Register = ({ modalRegister, setModalRegister }) => {
                         </TextInput>
                     </View>
                     <View>
-                        <Text style={style.title}>Contraseña</Text>
+                        <Text style={style.title}>Password</Text>
                         <TextInput
                             style={style.input}
-                            placeholder="contraseña"
+                            placeholder="Password"
                             placeholderTextColor={'#ccc'}
                             value={password}
                             maxLength={8}
@@ -65,16 +65,16 @@ const Register = ({ modalRegister, setModalRegister }) => {
 
                     <View>
                         <Pressable
-                            style={style.btnNuevaCita}
+                            style={style.btn}
                             onPress={() => registrer()}
                         >
-                            <Text style={style.btnTextoNuevaCita}>Registar</Text>
+                            <Text style={style.btnText}>Register</Text>
                         </Pressable>
                         <Pressable
-                            style={style.btnNuevaCita}
+                            style={style.btn}
                             onPress={() => setModalRegister(!modalRegister)}
                         >
-                            <Text style={style.btnTextoNuevaCita}>Cancelar</Text>
+                            <Text style={style.btnText}>Cancel</Text>
                         </Pressable>
                     </View>
                 </ScrollView>
@@ -114,7 +114,7 @@ const style = StyleSheet.create({
         padding: 15,
         borderRadius: 10,
     },
-    btnNuevaCita: {
+    btn: {
         backgroundColor: '#6D28D9',
         padding: 15,
         borderRadius: 5,
@@ -122,7 +122,7 @@ const style = StyleSheet.create({
         marginHorizontal: 20,
 
     },
-    btnTextoNuevaCita: {
+    btnText: {
         textAlign: 'center',
         color: '#fff',
         fontSize: 18,
