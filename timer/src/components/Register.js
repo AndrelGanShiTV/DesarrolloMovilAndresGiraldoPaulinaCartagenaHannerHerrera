@@ -12,27 +12,27 @@ import {
     ScrollView,
 } from 'react-native';
 
-const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
-    const [nombreusuario, setNombreUsuario] = useState("")
-    const [contraseñaregi, setContraseñaregi] = useState("")
-    const usuario = {
+const Register = ({ modalRegister, setModalRegister }) => {
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const user = {
         id: Date.now(),
-        nombreusuario: nombreusuario,
-        contraseñaregi: contraseñaregi
+        username: username,
+        password: password
     }
-    const minero = []
+    const miner = []
 
-    function registrar() {
-        minero.push(usuario)
-        for (let index = 0; index < minero.length; index++) {
-            console.log(minero[index].nombreusuario)
-            console.log(minero[index].contraseñaregi)
+    function registrer() {
+        miner.push(usuario)
+        for (let index = 0; index < miner.length; index++) {
+            console.log(minero[index].username)
+            console.log(minero[index].password)
         }
     }
     return (
         <Modal
             animationType='slide'
-            visible={modalRegistrar}
+            visible={modalRegister}
         >
             <SafeAreaView style={style.title}>
                 <ScrollView>
@@ -45,8 +45,8 @@ const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
                             style={style.input}
                             placeholder='Ingrese usuario'
                             placeholderTextColor={'#ccc'}
-                            value={nombreusuario}
-                            onChangeText={setNombreUsuario}
+                            value={username}
+                            onChangeText={setUsername}
                         >
                         </TextInput>
                     </View>
@@ -56,9 +56,9 @@ const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
                             style={style.input}
                             placeholder="contraseña"
                             placeholderTextColor={'#ccc'}
-                            value={contraseñaregi}
+                            value={password}
                             maxLength={8}
-                            onChangeText={setContraseñaregi}
+                            onChangeText={setPassword}
                         >
                         </TextInput>
                     </View>
@@ -66,13 +66,13 @@ const Registrar = ({ modalRegistrar, setModalRegistrar }) => {
                     <View>
                         <Pressable
                             style={style.btnNuevaCita}
-                            onPress={() => registrar()}
+                            onPress={() => registrer()}
                         >
                             <Text style={style.btnTextoNuevaCita}>Registar</Text>
                         </Pressable>
                         <Pressable
                             style={style.btnNuevaCita}
-                            onPress={() => setModalRegistrar(!modalRegistrar)}
+                            onPress={() => setModalRegister(!modalRegister)}
                         >
                             <Text style={style.btnTextoNuevaCita}>Cancelar</Text>
                         </Pressable>
@@ -131,4 +131,4 @@ const style = StyleSheet.create({
     },
 });
 
-export default Registrar
+export default Register;
