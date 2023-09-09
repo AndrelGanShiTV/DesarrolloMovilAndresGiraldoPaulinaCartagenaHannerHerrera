@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Formulario from './src/components/Formulario';
 import Login from './src/components/Login';
 import EnterHour from './src/components/EnterHour';
 import News from './src/components/News';
@@ -46,12 +45,6 @@ const App = () => {//array funcion
       >
         <Text style={style.btnTextoNuevaCita}>crear cita</Text>
       </Pressable>
-      <Formulario
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-
-      />
-
       <Pressable
         style={style.btnNuevaCita}
         onPress={() => setModalEnterHour(!modalEnterHour)}
